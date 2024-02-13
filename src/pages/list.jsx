@@ -3,7 +3,6 @@ import { AddItem } from "../componentes/additem"
 import { Items } from "../componentes/items"
 import { useState } from "react"
 
-
 export function ListPage() {  
   const [array, setArray] = useState([]);
   function handleArrayChange(novoArray) {

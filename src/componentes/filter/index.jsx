@@ -11,15 +11,17 @@ export function Filter({onArrayChange}){
     let category = document.getElementById('categorys').value
     const newArr = [...arr]
 
-    if(amount == ""|| itemName == "" || category == ""){
-        alert('preencha tudo')
-    }
-    else{
-      newArr.push({amount, itemName, category})
-      onArrayChange(newArr)
-      setArr(newArr)
-    }
+    // if(amount == ""|| itemName == "" || category == ""){
+    //     alert('preencha tudo')
+    // }
+    // else{
+     
+    // }
 
+    newArr.push({amount, itemName, category, checked: false})
+    onArrayChange(newArr)
+    setArr(newArr)
+  
   }
    
 

@@ -1,21 +1,35 @@
 import {Item} from "../item"
-
 export function Items({array, onArrayChange}){
 
+let arrCheck = []
+let arr = [...array]
 
-        function mandarProFinal(index){
-                // let itemRemovivo = array.splice(index, 1)[0]
-                // array.push(itemRemovivo)
-                // const newArr = [...array]
-                // onArrayChange(newArr)
-                
+        function mandarProFinal(e){
+               
+              if(e.target.tagName == 'svg'){
+                arr.splice(e.target.parentNode.parentNode.id, 1)
+                onArrayChange(arr)
+              }
+              else {
+                if(e.target.checked){
+                        let itemRemovido = arr.splice( e.target.parentNode.parentNode.id, 1)[0]
+                        itemRemovido.checked = true
+                        arrCheck.push(itemRemovido)
+                        arr = [...arr, ...arrCheck]
+                        onArrayChange(arr)         
+                }
+                else{
+                        let itemRemovido = arr.splice(e.target.parentNode.parentNode.id, 1)[0]
+                        itemRemovido.checked = false
+                        arr.unshift(itemRemovido)
+                        onArrayChange(arr)
+                }
+              }      
         }
-        
- 
-        
+
         return(
             <>
-                 {array.map((i, index) => <Item manipularArray={mandarProFinal}  itemId={index} amount={i.amount + " Unidades"} name={i.itemName} category={i.category} key={self.crypto.randomUUID()}/>  )}
+                 {arr.map((i, index) => <Item manipularArray={mandarProFinal} itemId={index} cheking={i.checked} amount={i.amount + " Unidades"} name={i.itemName} category={i.category} key={self.crypto.randomUUID()}/>  )}
             </>
             
     )
