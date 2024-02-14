@@ -8,6 +8,7 @@ let arr = [...array]
                
               if(e.target.tagName == 'svg'){
                 arr.splice(e.target.parentNode.parentNode.id, 1)
+                console.log(arr)
                 onArrayChange(arr)
               }
               else {

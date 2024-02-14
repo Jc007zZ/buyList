@@ -6,6 +6,7 @@ import { useState } from "react"
 export function ListPage() {  
   const [array, setArray] = useState([]);
   function handleArrayChange(novoArray) {
+    console.log(novoArray)
     setArray(novoArray);
   };
 
@@ -14,7 +15,7 @@ export function ListPage() {
         <section className="flex relative flex-col gap-5 bg-[url('../../assets/background.svg')] px-5 pt-16 ">
           <h1>Lista de Compras</h1>
           <AddItem/>
-          <Filter onArrayChange={handleArrayChange}/>
+          <Filter onArrayChange={handleArrayChange} array={array}/>
         </section>
 
         <form className=" flex flex-col gap-6 mt-9 px-5" id="items" >

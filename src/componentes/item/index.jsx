@@ -37,9 +37,9 @@ export function Item({name, amount, category, itemId, manipularArray, cheking}){
                     </div>
                  </label>
 
-                <div className="flex gap-6 items-center">
+                <div onClick={deleteItem} className="flex gap-6 items-center">
                     {icons[category]}
-                    <X size={24} onClick={deleteItem} color="#A881E6" strokeWidth={2.25} />
+                    <X size={24}  color="#A881E6" strokeWidth={2.25} />
                 </div>
             </div>
     )

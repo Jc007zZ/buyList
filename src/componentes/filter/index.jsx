@@ -1,10 +1,13 @@
 import {Plus} from"lucide-react"
 import { useState } from "react"
 
-export function Filter({onArrayChange}){
+export function Filter({onArrayChange, array}){
   
-  const [arr, setArr] = useState([])
- 
+  let arr = array
+  // const [arr, setArr] = useState(arrs)
+  
+//  console.log(arr)
+
   function AddItem(){
     let amount = document.getElementById('amount').value
     let itemName = document.getElementById('itemName').value
@@ -20,7 +23,8 @@ export function Filter({onArrayChange}){
 
     newArr.push({amount, itemName, category, checked: false})
     onArrayChange(newArr)
-    setArr(newArr)
+    // setArr(newArr)
+    arr = newArr
   
   }
    
