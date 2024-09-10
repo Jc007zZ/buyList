@@ -6,7 +6,6 @@ import { useState } from "react"
 export function ListPage() {  
   const [array, setArray] = useState([]);
   function handleArrayChange(novoArray) {
-    console.log(novoArray)
     setArray(novoArray);
   };
 

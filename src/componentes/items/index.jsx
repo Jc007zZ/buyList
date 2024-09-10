@@ -5,8 +5,8 @@ let arrCheck = []
 let arr = [...array]
 
         function mandarProFinal(e){
-               
-              if(e.target.tagName == 'svg'){
+               console.log(e.target.tagName)
+              if(e.target.tagName == 'svg' || e.target.tagName == 'path'){
                 arr.splice(e.target.parentNode.parentNode.id, 1)
                 console.log(arr)
                 onArrayChange(arr)
