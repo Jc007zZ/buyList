@@ -24,7 +24,7 @@ A aplicação permite ao usuário gerenciar uma lista de compras de forma simple
 ## Tecnologias Utilizadas
 
 - **React**: Biblioteca JavaScript para construção da interface do usuário
-- **CSS**: Para a estilização dos componentes e responsividade
+- **Tailwind**: Para a estilização dos componentes e responsividade
 - **Local Storage**: Para armazenar a lista de compras localmente no navegador
 
 ## Como Executar o Projeto
